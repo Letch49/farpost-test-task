@@ -1,0 +1,9 @@
+extends layout
+block meta
+  link(rel="prerender" href="/objects/")
+block content
+  .container.mt-5
+    .row#ribbon-area
+      .col-12.center#hello.d-flex.justify-content-center.align-items-center
+        span.hello-text.d-block=title
+        span.hello-content Нажмите #[img(src="/images/enter.svg", width="30px" class="img-hello")] чтобы начать

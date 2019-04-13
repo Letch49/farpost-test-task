@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+html,
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  background-color: #f7f7f7 !important;
+}
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: .8rem;
+  }
+}
+.h-100 {
+  height: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
+a {
+  color: #0056b2;
+  transition: all 2s ease-in-out;
+}
+a:hover {
+  color: #0062cb;
+}
+#hello {
+  position: relative;
+  top: 12rem;
+}
+.hello-text {
+  font-size: 4rem;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .hello-text {
+    font-size: 3.5rem;
+  }
+}
+.hello-content {
+  font-size: 2rem;
+  color: #666;
+  position: absolute;
+  top: 3rem;
+}
+.hello-content .img-hello {
+  transition: all 200ms ease-in-out;
+  -webkit-animation: scale 1.3s infinite ease-in-out;
+          animation: scale 1.3s infinite ease-in-out;
+}
+.hello-content .img-hello:hover {
+  -webkit-filter: opacity(0.9);
+          filter: opacity(0.9);
+}
+.animation-move {
+  -webkit-animation: move 2s ease-in-out;
+          animation: move 2s ease-in-out;
+}
+@-webkit-keyframes move {
+  from {
+    top: 12rem;
+  }
+  to {
+    top: -25rem;
+  }
+}
+@keyframes move {
+  from {
+    top: 12rem;
+  }
+  to {
+    top: -25rem;
+  }
+}
+@-webkit-keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.animation-opacity {
+  -webkit-animation: hidden 400ms ease-in-out;
+          animation: hidden 400ms ease-in-out;
+}
+@-webkit-keyframes hidden {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes hidden {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.ribbon-item {
+  min-height: 22rem;
+  background: white;
+  border-radius: 5px;
+}
+.ribbon-item header {
+  font-size: .9rem;
+}
+.ribbon-item header::after {
+  content: '';
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  left: 0;
+  top: 2.8em;
+  height: 0.05rem;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+.ribbon-item main h2 {
+  color: #585858;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.ribbon-item main p {
+  font-size: .9rem;
+  color: #454545;
+}
+.ribbon-item main .images-container {
+  position: relative;
+}
+.ribbon-item main .images-container:before {
+  content: "";
+  display: block;
+  height: 94%;
+  top: 1rem;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: 0.05rem;
+  position: absolute;
+}
+.ribbon-item main .images-container img {
+  object-fit: contain;
+}
+.btns-ribbon div {
+  font-size: .9rem;
+}
+.btns-ribbon div .label {
+  color: #0f0f0f;
+  text-align: right;
+  width: 80px;
+  font-weight: 500;
+}
+.btns-ribbon div .btn {
+  color: gray;
+}
+.btns-ribbon div .icon {
+  border-radius: 50%;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+}
+.btns-ribbon div .icon.green {
+  background-color: #88bd35;
+}
+.btns-ribbon div .icon.orange {
+  background-color: #f7882e;
+}
+.btns-ribbon div .icon.blue {
+  background-color: #1764cc;
+}
+.btns-ribbon div .icon.without {
+  background-color: none;
+}
+#be-free {
+  font-size: 2rem;
+  color: #5d5d5d;
+}
+.focus .ribbon-item {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.textarea {
+  width: 100%;
+  margin-top: 1rem;
+  height: 10rem;
+}
+.text-green {
+  color: #88bd35;
+}
+.text-orange {
+  color: #f7882e;
+}
+.text-blue {
+  color: #1764cc;
+}
+::-webkit-input-placeholder {
+  font-size: .8rem;
+  line-height: 1.5;
+}
+::-moz-placeholder {
+  font-size: .8rem;
+  line-height: 1.5;
+}
+:-ms-input-placeholder {
+  font-size: .8rem;
+  line-height: 1.5;
+}
+::placeholder {
+  font-size: .8rem;
+  line-height: 1.5;
+}
+/*# sourceMappingURL=./style.css.map */

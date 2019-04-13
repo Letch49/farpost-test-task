@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+    meta(name="charset" content="utf-8")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css")
+    block meta
+  body.app
+      block content
+      script(src="/javascripts/dist/main.js" type="text/javascript")
+      

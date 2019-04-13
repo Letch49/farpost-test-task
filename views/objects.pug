@@ -1,0 +1,45 @@
+block content
+  .container-fluid.p-5
+    .row#ribbon-items
+      each val in rest
+        div(class="col-12 mb-5 ribbon" id=val['id'])
+          .row
+            section.col-10.ribbon-item
+              header.d-flex.justify-content-between.align-items-center.py-2
+                .posting
+                  a(href='/post/'+val.id)=val['id']
+                  span.mx-2='-'
+                  span=val['publishDateString']
+                .user
+                  img(src='/images/man-user.svg' alt=val.ownerLogin width='20px' class="d-inline mr-2")
+                  a(href="/u/"+val.ownerId)=val.ownerLogin
+              main
+                .row
+                  .col-8
+                    h2.mt-2=val.bulletinSubject
+                    each text in val.bulletinText
+                      p=text
+                  .col-4.d-flex.flex-direction-column.align-items-start.justify-content-start.flex-wrap.mt-5.pt-3.images-container
+                    each img in val.bulletInImages
+                      img(src=img width='190px' height='190px' class='m-2')
+            section.col-2.btns-ribbon
+              div.approve
+                span.label.d-inline-block Одобрить
+                div(class="mx-2 icon green")
+                span.btn Пробел
+              div.reject
+                span.label.d-inline-block Отклонить
+                div(class="mx-2 icon orange")
+                span.btn Del
+              div.escalation
+                span.label.d-inline-block Эскалация
+                div(class="mx-2 icon blue")
+                span.btn Shift+Enter
+              div.save
+                span.label.d-inline-block Сохранить
+                div(class="mx-2 icon without")
+                span.btn F7
+      else
+        div.d-flex.flex-column.justify-content-center.align-items-center.w-100
+          h2#be-free.mb-5.d-inline-block Данных для обработки больше нет, можно отдыхать :)
+          img(src="/images/dove.svg" width="180px")
