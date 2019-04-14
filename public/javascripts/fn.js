@@ -28,7 +28,7 @@ export const toNext = (id) => {
     const el = document.getElementById(id);
     if (document.getElementById(id)) {
         el.classList.add('focus');
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: 'smooth', block : 'start' });
         el.dispatchEvent(new Event('click'));
     }
 };

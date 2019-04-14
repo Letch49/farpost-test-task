@@ -108,7 +108,7 @@ const keyboardEvents = (e) => {
         const data = JSON.stringify([...document.querySelectorAll('.ribbon')].map(el => prepeareBeforeSend(el)));
         jsonRequest('/', data, () => {
             clickF7KeyPsudoEvent(html, keyboardEvents, loadNewListEvent);
-            html.scrollIntoView({ behavior: 'smooth' });
+            html.scrollIntoView({ behavior: 'smooth', block : 'start' });
         });
         return;
     }
