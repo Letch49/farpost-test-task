@@ -1,5 +1,5 @@
 import { ruStatesOfRibbonItem, colorsOfRibbonItem } from './maps.js';
-import jsonRequest, { toNext as scrollToNextId, prepeareData as prepeareBeforeSend,removeIsExistsMany, initItems as initRibbon, clickF7KeyPsudoEvent, isNotExistsAction, isNotExistsMultyAction } from './fn.js';
+import jsonRequest, { toNext as scrollToNextId, prepeareData as prepeareBeforeSend, removeIsExistsMany, initItems as initRibbon, clickF7KeyPsudoEvent, isNotExistsAction, isNotExistsMultyAction } from './fn.js';
 
 const html = document.querySelector('.app');
 
@@ -18,13 +18,10 @@ html.addEventListener('keypress', (e) => {
     e.preventDefault();
 });
 
-const createTextArea = (className, placeholder, target) => {
+const createTextArea = (className, placeholder) => {
     const textArea = document.createElement('textarea');
     textArea.classList.add(className);
     textArea.placeholder = placeholder;
-
-    const isDeleteDecision = target.querySelector('.decision').innerHTML.split(' ').pop() === ruStatesOfRibbonItem.get(46);
-
     textArea.addEventListener('keypress', (e) => {
         html.removeEventListener('keyup', keyboardEvents, { once: true });
         html.removeEventListener('keyup', cancelLinkEvent, { once: true });
@@ -32,10 +29,6 @@ const createTextArea = (className, placeholder, target) => {
         e.target.value += e.key === 'Enter' ? '' : e.key;
 
         if (e.key === 'Enter') {
-            if (isDeleteDecision && e.target.value.trim().length === 0) {
-                alert('Комментарий для удаления не может быть пустым!');
-                return;
-            }
             html.addEventListener('keyup', keyboardEvents);
             html.addEventListener('keyup', cancelLinkEvent);
 
@@ -97,7 +90,7 @@ const keyboardEvents = (e) => {
     if (e.keyCode === 46 || e.keyCode === 32 || (e.shiftKey && e.keyCode === 13)) {
         const btnsRibbon = ribbon.querySelector('.btns-ribbon');
 
-        const decision = createSpan('d-block', `Ваше решение: ${ruStatesOfRibbonItem.get(e.keyCode)}`); 
+        const decision = createSpan('d-block', `Ваше решение: ${ruStatesOfRibbonItem.get(e.keyCode)}`);
         decision.classList.add('decision', colorsOfRibbonItem.get(e.keyCode));
 
         isNotExistsAction(btnsRibbon, '.decision', () => btnsRibbon.append(decision));

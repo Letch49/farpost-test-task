@@ -40,6 +40,10 @@ export const prepeareData = (el) => {
     const status = el.querySelector('.decision').innerHTML.split(' ').pop();
     const message = el.querySelector('.comment') ? el.querySelector('.comment').innerHTML : null;
     const getOneOrTwo = () => Math.random() * 100 >= 50 ? 1 : 2;
+    if(status === 'Отклонить' && !message) {
+        alert(`Укажите причину отклонения для объявления №${el.id}`);
+        return;
+    }
     return {
         id: el.id,
         workers_id: getOneOrTwo(),
